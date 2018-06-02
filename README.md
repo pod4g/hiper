@@ -26,11 +26,11 @@ hiper -n 50 http://www.didichuxing.com
 hiper --help
 
 -v, --version       output the version number
--n, --count <n>     指定加载次数
+-n, --count <n>     指定加载次数（default: 20）
 -c, --config <n>    载入配置文件（绝对路径）
--H, --headless [b]  是否使用无头模式 (default: true)
---no-cache          禁用缓存
---no-javascript     禁用javascript
+-H, --headless [b]  是否使用无头模式（default: true）
+--no-cache          禁用缓存（default: false）
+--no-javascript     禁用javascript（default: false）
 ```
 
 ## Config
