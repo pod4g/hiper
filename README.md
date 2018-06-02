@@ -44,7 +44,13 @@ hiper -n 50 http://www.didichuxing.com
 
 ``` bash
 # 如果在/home/config.json配置了url，那么在命令行中无需再指定url
-hiper -c 50 /home/config.json
+hiper -n 50 /home/config.json
+```
+
+## Usage
+
+```bash
+hiper --help
 ```
 
 ## License
