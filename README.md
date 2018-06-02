@@ -12,7 +12,7 @@
 
 ``` bash
 # install
-npm install hiper
+npm install hiper -g
 
 # run test 加载指定的网页50次以查看性能
 hiper -n 50 http://www.didichuxing.com

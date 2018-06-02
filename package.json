@@ -4,14 +4,25 @@
     "headless": true
   },
   "name": "hiper",
-  "version": "0.0.1",
-  "description": " 🚀 A statistical analysis tool for performance testing ",
-  "main": "index.js",
+  "version": "0.0.2",
+  "description": "🚀 A statistical analysis tool for performance testing",
+  "keywords": [
+    "performance",
+    "statistical",
+    "analysis",
+    "testing",
+    "tool",
+    "puppeteer",
+    "shell",
+    "cli"
+  ],
+  "homepage": "https://github.com/pod4g/hiper",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "hiper": "./index.js"
+    "hiper": "./src/index.js"
   },
   "author": "liyanfeng(pod4g)",
   "license": "MIT",
