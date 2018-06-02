@@ -146,14 +146,14 @@ class Analyzer {
          totalLoadTime += this.getLoadTime(navigationStart, loadEventEnd)
       }
 
-      console.log('DNS查询耗时：', Util.formatMSToHumanReadable(this.getAverage(totalDNSTime, length)))
-      console.log('TCP连接耗时：', Util.formatMSToHumanReadable(this.getAverage(totalTCPTime, length)))
-      console.log('TTFB：', Util.formatMSToHumanReadable(this.getAverage(totalTTFBTime, length)))
-      console.log('资源下载耗时：', Util.formatMSToHumanReadable(this.getAverage(totalDownloadTime, length)))
-      console.log('DOM树解析耗时：', Util.formatMSToHumanReadable(this.getAverage(totalParseDOMTreeTime, length)))
-      console.log('白屏时间：', Util.formatMSToHumanReadable(this.getAverage(totalWhiteScreenTime, length)))
-      console.log('DOM Ready时间：', Util.formatMSToHumanReadable(this.getAverage(totalDOMReadyTime, length)))
-      console.log('load时间：', Util.formatMSToHumanReadable(this.getAverage(totalLoadTime, length)))
+      console.log('DNS lookup time:', Util.formatMSToHumanReadable(this.getAverage(totalDNSTime, length)))
+      console.log('TCP connect time:', Util.formatMSToHumanReadable(this.getAverage(totalTCPTime, length)))
+      console.log('TTFB:', Util.formatMSToHumanReadable(this.getAverage(totalTTFBTime, length)))
+      console.log('Download time:', Util.formatMSToHumanReadable(this.getAverage(totalDownloadTime, length)))
+      console.log('DOM tree build time:', Util.formatMSToHumanReadable(this.getAverage(totalParseDOMTreeTime, length)))
+      console.log('White screen time:', Util.formatMSToHumanReadable(this.getAverage(totalWhiteScreenTime, length)))
+      console.log('DOM Ready time:', Util.formatMSToHumanReadable(this.getAverage(totalDOMReadyTime, length)))
+      console.log('Load time:', Util.formatMSToHumanReadable(this.getAverage(totalLoadTime, length)))
       console.log(`\n`)
    }
 }
