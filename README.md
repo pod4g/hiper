@@ -1,12 +1,12 @@
 ![npm6.1.0](https://img.shields.io/npm/v/npm.svg)
 
-<span style="color:#eb6100;">Hi</span> <span style="color:#eb6100;">Per</span>formance
-
 ## Hiper
 
 > 🚀 A statistical analysis tool for performance testing 
 
 业界第一个性能测试的统计分析工具
+
+Short for **Hi** **per**formance
 
 ## The result
 
