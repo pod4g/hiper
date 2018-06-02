@@ -4,9 +4,7 @@
 
 > 🚀 A statistical analysis tool for performance testing 
 
-<span style="color:#eb6100;">Hi</span> <span style="color:#eb6100;">Per</span>formance
-
-业界第一个性能测试的统计分析工具
+业界第一个性能测试的统计分析工具 <span style="color:#eb6100;">Hi</span> <span style="color:#eb6100;">Per</span>formance
 
 ## The result
 
