@@ -6,7 +6,7 @@
 
 业界第一个性能测试的统计分析工具
 
-Short for **Hi** **per**formance
+The name is short for **Hi** **per**formance
 
 ## The result
 
