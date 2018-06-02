@@ -8,7 +8,7 @@
 
 ![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper2.png)
 
-## Build Setup
+## Install
 
 ``` bash
 # install
