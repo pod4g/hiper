@@ -55,8 +55,6 @@ class Performance {
       let lastCountOfTheTab = count - (countPerTab * tabsLen)
       let loadTasks = []
       let loadEvents = []
-      let aaa = 0
-      let bbb = 0
       for (let i = 0; i < tabsLen; i++) {
          let page = tabs[i]
          let loadCountPerTab = countPerTab

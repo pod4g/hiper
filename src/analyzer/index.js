@@ -1,5 +1,15 @@
 const Util = require('../util')
-
+/**
+ * https://developer.mozilla.org/zh-CN/docs/Web/API/Document/readyState
+ * https://stackoverflow.com/questions/13346746/document-readystate-on-domcontentloaded
+ * readyState = interactive，可以近似地作为DOM Ready事件
+ * readyState = complete，可以近似地作为load事件
+ * DOM Ready事件在「interactive」和「complete」之间执行
+ * readyState的值解释：
+ * loading 文档仍在加载
+ * interactive 文档已经完成加载，文档已被解析，但是诸如图像，样式表和框架之类的子资源仍在加载
+ * complete 文档和所有子资源已经全部加载完毕。loads事件即将出发。
+ */
 class Analyzer {
    constructor (data) {
       this.data = data
@@ -31,7 +41,7 @@ class Analyzer {
     * @param {Number} responseStart 返回用户代理从服务器、缓存、本地资源中，接收到第一个字节数据的时间
     * @param {Number} responseEnd 返回用户代理接收到最后一个字符的时间，和当前连接被关闭的时间中，更早的那个。
     * 同样，文档可能来自服务器、缓存、或本地资源
-    * @returns {Number} 资源下载耗时
+    * @returns {Number} 网页本身的下载耗时
     */
    getDownloadTime (responseStart, responseEnd) {
       return responseEnd - responseStart
@@ -40,10 +50,11 @@ class Analyzer {
    /**
     * 
     * @param {Number} domInteractive 准备加载新页面的起始时间
-    * @param {Number} domComplete 文档的DOMContentLoaded 事件的结束时间
+    * @param {Number} domComplete readyState = complete的时候
     * @returns {Number} 解析DOM Tree耗时
+    * 这个说法有点儿不严谨，这个只能当做dom加载完毕以后，子资源的下载耗时，名字起的容易让人误解
     */
-   getParseDOMTreeTime (domInteractive, domComplete) {
+   getAfterDOMReadyTheDownloadTimeOfTheRes (domInteractive, domComplete) {
       return domComplete - domInteractive
    }
    /**
@@ -108,7 +119,7 @@ class Analyzer {
       // donwload资源耗时
       let totalDownloadTime = 0
       // 解析dom树耗时
-      let totalParseDOMTreeTime = 0
+      let totalAfterDOMReadyTheDownloadTimeOfTheRes = 0
       // 白屏时间
       let totalWhiteScreenTime = 0
       // domready时间
@@ -140,7 +151,7 @@ class Analyzer {
          totalTCPTime += this.getTCPTime(connectStart, connectEnd)
          totalTTFBTime += this.getTTFB(requestStart, responseStart)
          totalDownloadTime += this.getDownloadTime(responseStart, responseEnd)
-         totalParseDOMTreeTime += this.getParseDOMTreeTime(domInteractive, domComplete)
+         totalAfterDOMReadyTheDownloadTimeOfTheRes += this.getAfterDOMReadyTheDownloadTimeOfTheRes(domInteractive, domComplete)
          totalWhiteScreenTime += this.getWhiteScreenTime(navigationStart, domInteractive)
          totalDOMReadyTime += this.getDOMReadyTime(navigationStart, domContentLoadedEventEnd)
          totalLoadTime += this.getLoadTime(navigationStart, loadEventEnd)
@@ -149,8 +160,8 @@ class Analyzer {
       console.log('DNS lookup time:', Util.formatMSToHumanReadable(this.getAverage(totalDNSTime, length)))
       console.log('TCP connect time:', Util.formatMSToHumanReadable(this.getAverage(totalTCPTime, length)))
       console.log('TTFB:', Util.formatMSToHumanReadable(this.getAverage(totalTTFBTime, length)))
-      console.log('Download time:', Util.formatMSToHumanReadable(this.getAverage(totalDownloadTime, length)))
-      console.log('DOM tree build time:', Util.formatMSToHumanReadable(this.getAverage(totalParseDOMTreeTime, length)))
+      console.log('Download time of the page:', Util.formatMSToHumanReadable(this.getAverage(totalDownloadTime, length)))
+      console.log('After DOM Ready the download time of resources:', Util.formatMSToHumanReadable(this.getAverage(totalAfterDOMReadyTheDownloadTimeOfTheRes, length)))
       console.log('White screen time:', Util.formatMSToHumanReadable(this.getAverage(totalWhiteScreenTime, length)))
       console.log('DOM Ready time:', Util.formatMSToHumanReadable(this.getAverage(totalDOMReadyTime, length)))
       console.log('Load time:', Util.formatMSToHumanReadable(this.getAverage(totalLoadTime, length)))
