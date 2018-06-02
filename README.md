@@ -1,3 +1,4 @@
+![Build Status](https://img.shields.io/circleci/project/vuejs/vue/dev.svg)
 ![npm6.1.0](https://img.shields.io/npm/v/npm.svg)
 
 ## Hiper
