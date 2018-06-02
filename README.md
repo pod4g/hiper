@@ -27,39 +27,24 @@ hiper -n 50 http://www.didichuxing.com
 
 假设登录的cookie需要下面几个字段。配置完毕之后。
 
-执行
-
-``` bash
-# 如果在/home/config.json配置了url，那么命令行中不需要再写
-hiper -c 50 /home/config.json、
-```
-
 ```javascript
 {
-   "url": "http://www.didichuxing.com", // 如果不想在明亮行书写url，那么写在配置文件里也是可以的
+   // 我们也可以在配置文件中指定要测试的网页，这样就不用再命令行指定了
+   "url": "http://www.didichuxing.com",
+   // 把所有记录登录状态的cookie都写到配置这儿，为了演示方便只写了一个
    "cookies": [{
       "name": "token",
-      "value": "9+cL224Xh6VuRT/MUJOPVDS0BaSYQ770fyPluWILNMmDqzRnqo1Ns8UVArZvzJvIQJJKMTusu52rh66t36OvnWNaPYHCor3NtoDXJ63fJBN2LtI7xzVflueiSqJ9zMVwZZiPUFPoIRsizEiJydsQguTUu6H+Wq/x1mKa4W6WhVhss5k2D2F8Ab1A8f7CmoIvk9ltdQAYUV+Yns9kSwraW6ytY323ea3NqCP+Cd2zNRsHNF6vXHjBpa8q1Fy0NKXsLDxDiGgAAkwmaITWFK4LfyonvxTWY5Q==",
+      "value": "9+cL224Xh6VuRT/MUJOPVDS0BaSYQ770",
       "domain": "example.com",
       "path": "/",
-      "size": 294,
-      "httpOnly": true
-   }, {
-      "name": "username",
-      "value": "liyanfeng",
-      "domain": "example.com",
-      "path": "/",
-      "size": 17,
-      "httpOnly": false
-   }, {
-      "name": "ticket",
-      "value": "8c85557fccce70087fe7f3204dadaad5000112000",
-      "domain": "example.com",
-      "path": "/",
-      "size": 47,
-      "httpOnly": false
+      "size": 294
    }]
 }
+```
+
+``` bash
+# 如果在/home/config.json配置了url，那么在命令行中无需再指定url
+hiper -c 50 /home/config.json
 ```
 
 ## License
