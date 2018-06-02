@@ -47,7 +47,14 @@ class Performance {
    }
    async run (opts = this.opts) {
       let startTimestamp = Date.now()
-      let { count, headless, config = {}, url } = opts
+      let { 
+        count, 
+        headless, 
+        config = {}, 
+        url, 
+        cache,
+        javascript
+      } = opts
       const browser = await puppeteer.launch({ headless, args: ['--unlimited-storage', '--full-memory-crash-report'] })
       let tabs = await this.generateTabs(browser, count)
       let tabsLen = tabs.length
@@ -60,7 +67,8 @@ class Performance {
          let loadCountPerTab = countPerTab
          if (i < tabsLen - 1) loadCountPerTab = countPerTab + lastCountOfTheTab
          if (config.cookies) await page.setCookie(...config.cookies)
-         // page.setCacheEnabled(enabled)
+         page.setCacheEnabled(cache)
+         page.setJavaScriptEnabled(javascript)
          for (let j = 0; j < loadCountPerTab; j++) {
            loadTasks.push(
               page.goto(url, { timeout: 172800000, waitUntil: 'load' })

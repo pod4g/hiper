@@ -67,6 +67,13 @@ hiper -n 50 /home/config.json
 
 ```bash
 hiper --help
+
+-v, --version       output the version number
+-n, --count <n>     指定加载次数
+-c, --config <n>    载入配置文件（绝对路径）
+-H, --headless [b]  是否使用无头模式 (default: true)
+--no-cache          禁用缓存
+--no-javascript     禁用javascript
 ```
 
 ## Roadmap
