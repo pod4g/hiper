@@ -1,6 +1,6 @@
 # Hiper
 
-> A statistical analysis tool for performance testing 
+> 🚀 A statistical analysis tool for performance testing 
 
 业界第一个性能测试的统计分析工具
 
