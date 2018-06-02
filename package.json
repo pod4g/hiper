@@ -1,0 +1,22 @@
+{
+  "_args": {
+    "defaultReloadCount": 20,
+    "headless": true
+  },
+  "name": "hiper",
+  "version": "0.0.1",
+  "description": " 🚀 A statistical analysis tool for performance testing ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "hiper": "./index.js"
+  },
+  "author": "liyanfeng(pod4g)",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "puppeteer": "^1.4.0"
+  }
+}
