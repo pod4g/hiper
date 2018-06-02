@@ -31,6 +31,7 @@ hiper --help
 -H, --headless [b]  是否使用无头模式（default: true）
 --no-cache          禁用缓存（default: false）
 --no-javascript     禁用javascript（default: false）
+--no-online         离线模式（defalut: false）
 ```
 
 ## Config

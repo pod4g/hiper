@@ -30,15 +30,15 @@ class Cli {
          .description(description)
          .arguments('<url>')
          .action(url => loadUrl = url)
-         .option('-n, --count <n>', '指定加载次数', parseInt)
+         .option('-n, --count <n>', '指定加载次数（default: 20）', parseInt)
          .option('-c, --config <n>', '载入配置文件（绝对路径）', this.parseJSONFile)
-         .option('-H, --headless [b]', '是否使用无头模式', this.headless, _args.headless)
-         .option('--no-cache', '禁用缓存')
-         .option('--no-javascript', '禁用javascript')
+         .option('-H, --headless [b]', '是否使用无头模式（default: true）', this.headless, _args.headless)
+         .option('--no-cache', '禁用缓存（default: false）')
+         .option('--no-javascript', '禁用javascript（default: false）')
+         .option('--no-online', '离线模式（defalut: false）')
          .parse(process.argv)
 
-      let { count, config, headless, cache, javascript, useragent } = program
-      
+      let { count, config, headless, cache, javascript, online } = program
       if (config && config.cookies && !Array.isArray(config.cookies)) {
          config.cookies = [config.cookies]
       }
@@ -48,7 +48,7 @@ class Cli {
 
       let url = loadUrl || (config || {}).url
       
-      global.__hiper__ = { count, headless, config, url, cache, javascript}
+      global.__hiper__ = { count, headless, config, url, cache, javascript, online}
 
       return global.__hiper__ 
    }

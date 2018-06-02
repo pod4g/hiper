@@ -53,7 +53,8 @@ class Performance {
         config = {}, 
         url, 
         cache,
-        javascript
+        javascript,
+        online
       } = opts
       const browser = await puppeteer.launch({ headless, args: ['--unlimited-storage', '--full-memory-crash-report'] })
       let tabs = await this.generateTabs(browser, count)
@@ -69,6 +70,7 @@ class Performance {
          if (config.cookies) await page.setCookie(...config.cookies)
          page.setCacheEnabled(cache)
          page.setJavaScriptEnabled(javascript)
+         page.setOfflineMode(!online)
          for (let j = 0; j < loadCountPerTab; j++) {
            loadTasks.push(
               page.goto(url, { timeout: 172800000, waitUntil: 'load' })
