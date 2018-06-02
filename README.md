@@ -9,6 +9,8 @@
 
 The name is short for **Hi** **per**formance
 
+## Performance item
+
 ![timing](http://7xt9n8.com2.z0.glb.clouddn.com/timing.jpg)
 
 ## Pain spot
@@ -66,6 +68,15 @@ hiper -n 50 /home/config.json
 ```bash
 hiper --help
 ```
+
+## Roadmap
+
+未来要做的重点事项
+
+1. 增加页面加载的资源项的分析统计；
+2. 更好的输出格式化；
+3. 可以生成性能统计报告；
+4. 数据可视化。
 
 ## License
 
