@@ -1,12 +1,15 @@
 {
   "_args": {
-    "defaultReloadCount": 20,
-    "headless": true
+    "count": 20,
+    "headless": true,
+    "noCache": false,
+    "noJavascript": false,
+    "noOnline": false
   },
   "author": "liyanfeng(pod4g)",
   "email": "pod4dop@gmail.com",
   "name": "hiper",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "🚀 A statistical analysis tool for performance testing",
   "keywords": [
     "performance",
@@ -30,7 +33,7 @@
     "authors": "git log --format='%aN <%aE>' | sort -u"
   },
   "bin": {
-    "hiper": "./src/index.js"
+    "hiper": "--no-warnings ./src/index.js"
   },
   "license": "MIT",
   "dependencies": {

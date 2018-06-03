@@ -8,18 +8,6 @@ module.exports = class Performance {
     let tabs = []
     let pagesLength = 1
 
-    // if (count === 2) {
-    //    pagesLength = 2
-    // }
-
-    // if (count === 3) {
-    //    pagesLength = 3
-    // }
-
-    // if (count === 4) {
-    //    pagesLength = 4
-    // }
-
     if (count === 10) {
       pagesLength = 5
     }
@@ -40,6 +28,10 @@ module.exports = class Performance {
       pagesLength = 20
     }
 
+    if (count >= 500) {
+      pagesLength = 25
+    }
+
     for (let i = 0; i < pagesLength; i++) {
       tabs.push(await browser.newPage())
     }
@@ -47,11 +39,36 @@ module.exports = class Performance {
   }
   async run (opts = this.opts) {
     let startTimestamp = Date.now()
+    // { url: 'http://www.didichuxing.com',
+    //   count: 100,
+    //   headless: true,
+    //   useragent: 'asda',
+    //   viewport:
+    //   { width: 1140,
+    //     height: 768,
+    //     deviceScaleFactor: 1,
+    //     isMobile: false,
+    //     hasTouch: false,
+    //     isLandscape: false },
+    //   cookies:
+    //   [ { name: 'token',
+    //       value:
+    //         '9+cL224Xh6VuRT/MUJOPVDS0BaSYQ770fyPluWILNMmDqzRnqo1Ns8UVArZvzJvIQJJKMTusu52rh66t36OvnWNaPYHCor3NtoDXJ63fJBN2LtI7xzVflueiSqJ9zMVwZZiPUFPoIRsizEiJydsQguTUu6H+Wq/x1mKa4W6WhVhss5k2D2F8Ab1A8f7CmoIvk9ltdQAYUV+Yns9kSwraW6ytY323ea3NqCP+Cd2zNRsHNF6vXHjBpa8q1Fy0NKXsLDxDiGgAAkwmaITWFK4LfyonvxTWY5Q==',
+    //       domain: 'i.xiaojukeji.com',
+    //       path: '/',
+    //       size: 294,
+    //       httpOnly: true } ],
+    //   cache: true,
+    //   javascript: true,
+    //   online: true
+    // }
     let {
+      url,
       count,
       headless,
-      config = {},
-      url,
+      useragent,
+      viewport,
+      cookies,
       cache,
       javascript,
       online
@@ -64,24 +81,37 @@ module.exports = class Performance {
     let loadTasks = []
     let loadEvents = []
     for (let i = 0; i < tabsLen; i++) {
-      let page = tabs[i]
+      let tab = tabs[i]
       let loadCountPerTab = countPerTab
       if (i < tabsLen - 1) loadCountPerTab = countPerTab + lastCountOfTheTab
-      if (config.cookies) await page.setCookie(...config.cookies)
-      page.setCacheEnabled(cache)
-      page.setJavaScriptEnabled(javascript)
-      page.setOfflineMode(!online)
+      if (cookies) await tab.setCookie(...cookies)
+      let settingTasks = [
+        tab.setCacheEnabled(cache),
+        tab.setJavaScriptEnabled(javascript),
+        tab.setOfflineMode(!online),
+        tab.setRequestInterception(false)
+      ]
+      if (viewport) {
+        settingTasks.push(tab.setViewport(viewport))
+      }
+      if (useragent) {
+        settingTasks.push(tab.setUserAgent(useragent))
+      }
+
+      await Promise.all(settingTasks)
       for (let j = 0; j < loadCountPerTab; j++) {
         loadTasks.push(
-          page.goto(url, { timeout: 172800000, waitUntil: 'load' })
+          tab.goto(url, { timeout: 172800000, waitUntil: 'load' })
         )
-        page.on('load', () => {
-          loadEvents.push(page.evaluate(() => {
+        let loadHandler = () => {
+          loadEvents.push(tab.evaluate(() => {
             let total = window.performance
             let entries = total.getEntries()
             return JSON.stringify({ total, entries })
           }))
-        })
+          tab.removeListener('load', loadHandler)
+        }
+        tab.on('load', loadHandler)
       }
     }
     await Promise.all(loadTasks)

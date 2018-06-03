@@ -22,4 +22,15 @@ module.exports = class Util {
     }
     return ret
   }
+
+  static urlNormalize (url) {
+    if (!url) return ''
+    if (url.startsWith('//')) {
+      return `http:${url}`
+    }
+    if (!/^https?:\/\//.test(url)) {
+      return `http://${url}`
+    }
+    return url
+  }
 }
