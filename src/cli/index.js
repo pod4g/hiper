@@ -4,7 +4,7 @@ const path = require('path')
 const fs = require('fs')
 const { _args, version, description } = pjson
 
-class Cli {
+module.exports = class Cli {
 
    parseJSONFile (filePath) {
       filePath = path.isAbsolute(filePath) ? filePath : path.join(process.cwd(), filePath)
@@ -53,5 +53,3 @@ class Cli {
       return global.__hiper__ 
    }
 }
-
-module.exports = Cli

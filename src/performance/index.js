@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer')
 
-class Performance {
+module.exports = class Performance {
    constructor (opts) {
       this.opts = opts
    }
@@ -95,5 +95,3 @@ class Performance {
       return performances
    }
 }
-
-module.exports = Performance

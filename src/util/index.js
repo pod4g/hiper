@@ -1,5 +1,5 @@
 
-class Util {
+module.exports = class Util {
 
    /**
     * @param {Number} ms 
@@ -25,5 +25,3 @@ class Util {
       return ret
    }
 }
-
-module.exports = Util
