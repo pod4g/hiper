@@ -73,7 +73,7 @@ hiper -n 50 /home/config.json
 
 ![timing](http://7xt9n8.com2.z0.glb.clouddn.com/timing.jpg)
 
-## The result
+## The output
 
 ![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper2.png)
 
