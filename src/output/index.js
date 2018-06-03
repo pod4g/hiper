@@ -20,7 +20,7 @@ module.exports = class Outputer {
     console.log('\n')
     console.log(figlet.textSync('Hiper'))
     console.log('\n')
-    console.log(`🚀 加载 ${global.__hiper__.url} ${global.__hiper__.count} 次 用时${(global.__hiper__.runInterval) / 1000} s`)
+    console.log(`🚀 加载 ${global.__hiper__.url} ${global.__hiper__.count} 次 用时 ${(global.__hiper__.runInterval) / 1000} s`)
     console.log('\n')
     new Line()
       .padding(2)
