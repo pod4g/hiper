@@ -9,6 +9,10 @@
 
 The name is short for **Hi** **per**formance
 
+## The output
+
+![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper5.png)
+
 ## Install
 
 ``` bash
@@ -25,13 +29,22 @@ hiper -n 50 http://www.didichuxing.com
 ```bash
 hiper --help
 
--v, --version       output the version number
--n, --count <n>     指定加载次数（default: 20）
--c, --config <n>    载入配置文件（绝对路径）
--H, --headless [b]  是否使用无头模式（default: true）
---no-cache          禁用缓存（default: false）
---no-javascript     禁用javascript（default: false）
---no-online         离线模式（defalut: false）
+Usage: hiper [options] [url]
+
+🚀 A statistical analysis tool for performance testing
+
+Options:
+
+   -v, --version                output the version number
+   -n, --count <n>              指定加载次数（default: 20）
+   -c, --config <path>          载入配置文件
+   -u, --useragent <ua>         设置useragent
+   -H, --headless [b]           是否使用无头模式（default: true）
+   -e, --executablePath <path>  使用指定的chrome浏览器
+   --no-cache                   禁用缓存（default: false）
+   --no-javascript              禁用javascript（default: false）
+   --no-online                  离线模式（defalut: false）
+   -h, --help                   output usage information
 ```
 
 ## Config
@@ -72,10 +85,6 @@ hiper -n 50 /home/config.json
 ## Performance item
 
 ![timing](http://7xt9n8.com2.z0.glb.clouddn.com/timing.jpg)
-
-## The output
-
-![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper5.png)
 
 ## Roadmap
 
