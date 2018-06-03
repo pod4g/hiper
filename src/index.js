@@ -7,7 +7,6 @@
 /**
  * Module dependencies.
  */
-
 // 命令行对象
 const Cli = require('../src/cli')
 // 性能数据生成对象
@@ -21,11 +20,7 @@ const analyzer = new Analyzer()
 // 监听命令行
 let opts = cli.monitor()
 performance.run(opts).then(statisticData => {
-   analyzer.statistics(statisticData)
+  analyzer.statistics(statisticData)
 })
 
-
 // console.log(JSON.stringify(opts))
-
-
-
