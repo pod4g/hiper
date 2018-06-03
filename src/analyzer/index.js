@@ -128,7 +128,8 @@ class Analyzer {
     let totalLoadTime = 0
 
     for (let item of data) {
-      let { total, entries } = JSON.parse(item)
+      let { total } = JSON.parse(item)
+      // console.log(entries)
       let {
         navigationStart,
         domainLookupStart,
@@ -138,12 +139,12 @@ class Analyzer {
         requestStart,
         responseStart,
         responseEnd,
-        domLoading,
+        // domLoading,
         domInteractive,
-        domContentLoadedEventStart,
+        // domContentLoadedEventStart,
         domContentLoadedEventEnd,
         domComplete,
-        loadEventStart,
+        // loadEventStart,
         loadEventEnd
       } = total.timing
 
@@ -165,15 +166,28 @@ class Analyzer {
     // console.log('White screen time:', Util.formatMSToHumanReadable(this.getAverage(totalWhiteScreenTime, length)))
     // console.log('DOM Ready time:', Util.formatMSToHumanReadable(this.getAverage(totalDOMReadyTime, length)))
     // console.log('Load time:', Util.formatMSToHumanReadable(this.getAverage(totalLoadTime, length)))
-    console.log('DNS查询耗时：', Util.formatMSToHumanReadable(this.getAverage(totalDNSTime, length)))
-    console.log('TCP连接耗时:', Util.formatMSToHumanReadable(this.getAverage(totalTCPTime, length)))
-    console.log('TTFB:', Util.formatMSToHumanReadable(this.getAverage(totalTTFBTime, length)))
-    console.log('页面下载耗时:', Util.formatMSToHumanReadable(this.getAverage(totalDownloadTime, length)))
-    console.log('白屏时间:', Util.formatMSToHumanReadable(this.getAverage(totalWhiteScreenTime, length)))
-    console.log('DOM Ready耗时:', Util.formatMSToHumanReadable(this.getAverage(totalDOMReadyTime, length)))
-    console.log('DOM Ready之后继续进行资源下载的耗时:', Util.formatMSToHumanReadable(this.getAverage(totalAfterDOMReadyTheDownloadTimeOfTheRes, length)))
-    console.log('Load时间:', Util.formatMSToHumanReadable(this.getAverage(totalLoadTime, length)))
-    console.log(`\n`)
+    // console.log('DNS查询耗时：', Util.formatMSToHumanReadable(this.getAverage(totalDNSTime, length)))
+    // console.log('TCP连接耗时:', Util.formatMSToHumanReadable(this.getAverage(totalTCPTime, length)))
+    // console.log('TTFB:', Util.formatMSToHumanReadable(this.getAverage(totalTTFBTime, length)))
+    // console.log('页面下载耗时:', Util.formatMSToHumanReadable(this.getAverage(totalDownloadTime, length)))
+    // console.log('白屏时间:', Util.formatMSToHumanReadable(this.getAverage(totalWhiteScreenTime, length)))
+    // console.log('DOM Ready耗时:', Util.formatMSToHumanReadable(this.getAverage(totalDOMReadyTime, length)))
+    // console.log('DOM Ready之后继续进行资源下载的耗时:', Util.formatMSToHumanReadable(this.getAverage(totalAfterDOMReadyTheDownloadTimeOfTheRes, length)))
+    // console.log('Load时间:', Util.formatMSToHumanReadable(this.getAverage(totalLoadTime, length)))
+    // console.log(`\n`)
+
+    return {
+      total: {
+        dnsTime: Util.formatMSToHumanReadable(this.getAverage(totalDNSTime, length)),
+        tcpTime: Util.formatMSToHumanReadable(this.getAverage(totalTCPTime, length)),
+        TTFB: Util.formatMSToHumanReadable(this.getAverage(totalTTFBTime, length)),
+        pageDownloadTime: Util.formatMSToHumanReadable(this.getAverage(totalDownloadTime, length)),
+        whiteScreenTime: Util.formatMSToHumanReadable(this.getAverage(totalWhiteScreenTime, length)),
+        DOMReadyTime: Util.formatMSToHumanReadable(this.getAverage(totalDOMReadyTime, length)),
+        afterDOMReadyDownloadTime: Util.formatMSToHumanReadable(this.getAverage(totalAfterDOMReadyTheDownloadTimeOfTheRes, length)),
+        loadTime: Util.formatMSToHumanReadable(this.getAverage(totalLoadTime, length))
+      }
+    }
   }
 }
 

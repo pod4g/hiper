@@ -127,12 +127,10 @@ module.exports = class Performance {
     }
     await Promise.all(loadTasks)
     let performances = await Promise.all(loadEvents)
-    setTimeout(() => {
-      browser.close()
-      process.exit(-1)
-    })
-    console.log(`跑完 ${global.__hiper__.url} 全部性能测试用时：${(Date.now() - startTimestamp) / 1000}s`)
-    console.log(`\n---------------------- 🚀 各项指标平均耗时（${global.__hiper__.count}次）----------------------\n`)
+    setTimeout(() => browser.close())
+    global.__hiper__.runInterval = Date.now() - startTimestamp
+    // console.log(`跑完 ${global.__hiper__.url} 全部性能测试用时：${(Date.now() - startTimestamp) / 1000}s`)
+    // console.log(`\n---------------------- 🚀 各项指标平均耗时（${global.__hiper__.count}次）----------------------\n`)
     return performances
   }
 }
