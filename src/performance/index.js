@@ -63,6 +63,7 @@ module.exports = class Performance {
     //   online: true
     // }
     let {
+      executablePath,
       url,
       count,
       headless,
@@ -73,7 +74,17 @@ module.exports = class Performance {
       javascript,
       online
     } = opts
-    const browser = await puppeteer.launch({ headless, args: ['--unlimited-storage', '--full-memory-crash-report'] })
+
+    let launchOpts = {
+      headless,
+      args: ['--unlimited-storage', '--full-memory-crash-report']
+    }
+
+    if (executablePath) {
+      launchOpts.executablePath = executablePath
+      console.log(`\n${launchOpts.executablePath}\n`)
+    }
+    const browser = await puppeteer.launch(launchOpts)
     let tabs = await this.generateTabs(browser, count)
     let tabsLen = tabs.length
     let countPerTab = Math.floor(count / tabsLen)

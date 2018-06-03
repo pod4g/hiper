@@ -46,15 +46,17 @@ module.exports = class Cli {
       .arguments('<url>')
       .action(u => url = u) // eslint-disable-line
       .option('-n, --count <n>', '指定加载次数（default: 20）', parseInt)
-      .option('-c, --config <path>', '载入配置文件（绝对路径）', this.parseJSONFile)
+      .option('-c, --config <path>', '载入配置文件', this.parseJSONFile)
       .option('-u, --useragent <ua>', '设置useragent')
       .option('-H, --headless [b]', '是否使用无头模式（default: true）', this.headless)
+      .option('-e, --executablePath <path>', '使用指定的chrome浏览器')
       .option('--no-cache', '禁用缓存（default: false）')
       .option('--no-javascript', '禁用javascript（default: false）')
       .option('--no-online', '离线模式（defalut: false）')
       .parse(process.argv)
 
     let {
+      executablePath,
       count,
       config,
       headless,
@@ -92,6 +94,10 @@ module.exports = class Cli {
       online = config.online || !_args.noOnline
     }
 
+    if (executablePath == null) {
+      executablePath = config.executablePath
+    }
+
     if (config.viewport) {
       config.viewport.deviceScaleFactor = config.viewport.deviceScaleFactor || 1
       config.viewport.isMobile = config.viewport.isMobile || false
@@ -104,6 +110,7 @@ module.exports = class Cli {
     }
 
     let opts = Object.assign(config, {
+      executablePath,
       url,
       count,
       headless,
@@ -112,8 +119,6 @@ module.exports = class Cli {
       javascript,
       online
     })
-
-    console.log('opts:', opts)
 
     global.__hiper__ = opts
 
