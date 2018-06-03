@@ -8,6 +8,7 @@ yarn-error.log*
 selenium-debug.log
 config.json
 exp.json
+note
 
 # Editor directories and files
 .idea

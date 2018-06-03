@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#! /usr/bin/env node --no-warnings
 // 接受cli参数
 // 装配opts
 // 调用broswer拿到数据

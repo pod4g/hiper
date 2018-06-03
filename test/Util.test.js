@@ -9,7 +9,9 @@ test('Util.formatMSToHumanReadable', () => {
   expect(Util.formatMSToHumanReadable(3600011)).toBe('1.00 h')
   expect(Util.formatMSToHumanReadable(7200000)).toBe('2.00 h')
   expect(Util.formatMSToHumanReadable(7200000)).toBe('2.00 h')
+})
 
+test('Util.urlNormalize', () => {
   expect(Util.urlNormalize(null)).toBe('')
   expect(Util.urlNormalize(void 0)).toBe('')
   expect(Util.urlNormalize('')).toBe('')

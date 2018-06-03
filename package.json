@@ -9,7 +9,7 @@
   "author": "liyanfeng(pod4g)",
   "email": "pod4dop@gmail.com",
   "name": "hiper",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "🚀 A statistical analysis tool for performance testing",
   "keywords": [
     "performance",
@@ -33,7 +33,7 @@
     "authors": "git log --format='%aN <%aE>' | sort -u"
   },
   "bin": {
-    "hiper": "--no-warnings ./src/index.js"
+    "hiper": "./src/index.js"
   },
   "license": "MIT",
   "dependencies": {
