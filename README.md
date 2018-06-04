@@ -14,6 +14,7 @@ The name is short for **Hi** **per**formance
 
 ``` bash
 npm install hiper -g
+
 # or use yarn:
 # yarn global add hiper
 ```
