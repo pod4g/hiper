@@ -48,9 +48,6 @@ Options:
 ```
 
 ## Config
-
-典型的配置如下：
-
 ```javascript
 {
    // options 指向指定的chrome可执行程序，一般不用这项配置，除非你想测试特定版本的chrome
