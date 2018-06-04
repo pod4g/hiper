@@ -82,8 +82,8 @@ module.exports = class Performance {
 
     if (executablePath) {
       launchOpts.executablePath = executablePath
-      console.log(`\n${launchOpts.executablePath}\n`)
     }
+
     const browser = await puppeteer.launch(launchOpts)
     let tabs = await this.generateTabs(browser, count)
     let tabsLen = tabs.length
@@ -95,13 +95,15 @@ module.exports = class Performance {
       let tab = tabs[i]
       let loadCountPerTab = countPerTab
       if (i < tabsLen - 1) loadCountPerTab = countPerTab + lastCountOfTheTab
-      if (cookies) await tab.setCookie(...cookies)
       let settingTasks = [
         tab.setCacheEnabled(cache),
         tab.setJavaScriptEnabled(javascript),
         tab.setOfflineMode(!online),
         tab.setRequestInterception(false)
       ]
+      if (cookies) {
+        settingTasks.push(tab.setCookie(...cookies))
+      }
       if (viewport) {
         settingTasks.push(tab.setViewport(viewport))
       }
