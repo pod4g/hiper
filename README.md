@@ -65,7 +65,7 @@ Options:
    "cookies": [{
       "name": "token",
       "value": "9+cL224Xh6VuRT",
-      "domain": "i.xiaojukeji.com",
+      "domain": "example.com",
       "path": "/",
       "size": 294,
       "httpOnly": true
