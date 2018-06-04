@@ -84,11 +84,17 @@ Options:
    "useragent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36",
    // 设置viewport信息（可以不指定）
    "viewport": {
+      // 视口宽度
       "width": 375,
+      // 视口高度
       "height": 812,
+      // DPR
       "deviceScaleFactor": 3,
+      // 是否模拟成mobile
       "isMobile": true,
+      // 是否支持touch事件
       "hasTouch": false,
+      // 是否是横屏
       "isLandscape": false
    }
 }
