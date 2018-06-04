@@ -57,16 +57,40 @@ Options:
 
 ```javascript
 {
-   // 我们也可以在配置文件中指定要测试的网页，这样就不用再命令行指定了
+   // 指向指定的chrome可执行程序
+   "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+   // 测试的url
    "url": "http://www.didichuxing.com",
-   // 把所有记录登录状态的cookie都写到配置这儿，为了演示方便只写了一个
+   // 本次测试所需要的cookie。一般是登录信息的cookie
    "cookies": [{
       "name": "token",
-      "value": "9+cL224Xh6VuRT/MUJOPVDS0BaSYQ770",
-      "domain": "example.com",
+      "value": "9+cL224Xh6VuRT",
+      "domain": "i.xiaojukeji.com",
       "path": "/",
-      "size": 294
-   }]
+      "size": 294,
+      "httpOnly": true
+   }],
+   // 测试次数
+   "count": 100,
+   // 是否使用无头模式
+   "headless": true,
+   // 是否禁用cookie
+   "noCache": false,
+   // 是否禁用javascript
+   "noJavascript": false,
+   // 是否离线
+   "noOnline": false,
+   // 设置useragent信息（可以不指定）
+   "useragent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36",
+   // 设置viewport信息（可以不指定）
+   "viewport": {
+      "width": 375,
+      "height": 812,
+      "deviceScaleFactor": 3,
+      "isMobile": true,
+      "hasTouch": false,
+      "isLandscape": false
+   }
 }
 ```
 
