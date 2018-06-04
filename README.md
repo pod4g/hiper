@@ -52,10 +52,6 @@ Options:
 典型的配置如下：
 
 ```javascript
-/**
- * options 可选的
- * required 必须的
-*/
 {
    // options 指向指定的chrome可执行程序，一般不用这项配置，除非你想测试特定版本的chrome
    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
