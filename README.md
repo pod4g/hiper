@@ -16,6 +16,9 @@ The name is short for **Hi** **per**formance
 # install
 npm i hiper -g
 
+# or
+yarn global add hiper
+
 # 加载指定的网页50次以查看性能，默认20次
 hiper -n 50 http://www.didichuxing.com
 
