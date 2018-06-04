@@ -52,12 +52,16 @@ Options:
 典型的配置如下：
 
 ```javascript
+/**
+ * options 可选的
+ * required 必须的
+*/
 {
-   // 指向指定的chrome可执行程序
+   // options 指向指定的chrome可执行程序，一般不用这项配置，除非你想测试特定版本的chrome
    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-   // 测试的url
+   // required 测试的url
    "url": "http://www.didichuxing.com",
-   // 本次测试所需要的cookie。一般是登录信息的cookie
+   // options 本次测试所需要的cookie。一般是登录信息的cookie
    "cookies": [{
       "name": "token",
       "value": "9+cL224Xh6VuRT",
@@ -66,31 +70,31 @@ Options:
       "size": 294,
       "httpOnly": true
    }],
-   // 测试次数
+   // options default: 20 测试次数
    "count": 100,
-   // 是否使用无头模式
+   // options default: true 是否使用无头模式 
    "headless": true,
-   // 是否禁用cookie
+   // options default: false 是否禁用cookie 
    "noCache": false,
-   // 是否禁用javascript
+   // options default: false 是否禁用javascript
    "noJavascript": false,
-   // 是否离线
+   // options default: false 是否离线
    "noOnline": false,
-   // 设置useragent信息（可以不指定）
+   // options 设置useragent信息
    "useragent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36",
-   // 设置viewport信息（可以不指定）
+   // options 设置viewport信息
    "viewport": {
-      // 视口宽度
+      // options 视口宽度
       "width": 375,
-      // 视口高度
+      // options 视口高度
       "height": 812,
-      // DPR
+      // options default: 1 devicePixelRatio
       "deviceScaleFactor": 3,
-      // 是否模拟成mobile
-      "isMobile": true,
-      // 是否支持touch事件
+      // options default: false 是否模拟成mobile
+      "isMobile": false,
+      // options default: false 是否支持touch事件
       "hasTouch": false,
-      // 是否是横屏
+      // options default: false 是否是横屏
       "isLandscape": false
    }
 }
