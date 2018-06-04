@@ -53,7 +53,7 @@ Options:
 
 新建`/home/config.json`,
 
-假设登录的cookie需要下面几个字段。配置完毕之后。
+典型的配置如下：
 
 ```javascript
 {
