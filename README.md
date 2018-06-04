@@ -42,6 +42,33 @@ Options:
    -h, --help                   output usage information
 ```
 
+For instance
+
+```bash
+ # We can omit the protocol header if omited the protocol header is `http://`
+ 
+ # The simplest usage
+ hiper baidu.com
+
+ # if the url has any parameter, surround the url with double quotes
+ hiper "baidu.com?a=1&b=2"
+
+ #  Load the specified page 100 times
+ hiper -n 100 "baidu.com?a=1&b=2"
+
+ #  Load the specified page 100 times whitout `cache`
+ hiper -n 100 "baidu.com?a=1&b=2" --no-cache
+
+ #  Load the specified page 100 times whitout `javascript`
+ hiper -n 100 "baidu.com?a=1&b=2" --no-javascript
+ 
+ #  Load the specified page 100 times whitout `headless = false`
+ hiper -n 100 "baidu.com?a=1&b=2" -H false
+
+ #  Load the specified page 100 times whit set `useragent`
+ hiper -n 100 "baidu.com?a=1&b=2" -u "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+```
+
 ## Config
 ```javascript
 {
@@ -89,7 +116,7 @@ Options:
 ```
 
 ``` bash
-# 载入上述配置文件
+# Load the above configuration file
 hiper -c /home/config.json
 ```
 
