@@ -64,7 +64,7 @@ Options:
    "count": 100,
    // options default: true 是否使用无头模式 
    "headless": true,
-   // options default: false 是否禁用cookie 
+   // options default: false 是否禁用cache 
    "noCache": false,
    // options default: false 是否禁用javascript
    "noJavascript": false,
