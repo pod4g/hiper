@@ -61,7 +61,7 @@ Options:
    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
    // required 测试的url
    "url": "http://www.didichuxing.com",
-   // options 本次测试所需要的cookie。一般是登录信息的cookie
+   // options 本次测试所需要的cookie。一般是登录信息的cookie。 Array | Object
    "cookies": [{
       "name": "token",
       "value": "9+cL224Xh6VuRT",
