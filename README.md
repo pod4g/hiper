@@ -5,7 +5,7 @@
 
 > 🚀 A statistical analysis tool for performance testing 
 
-业界第一个性能测试的统计分析工具
+令人愉悦的性能统计分析工具
 
 The name is short for **Hi** **per**formance
 
