@@ -62,7 +62,7 @@ For instance
  #  Load the specified page 100 times whitout `javascript`
  hiper -n 100 "baidu.com?a=1&b=2" --no-javascript
  
- #  Load the specified page 100 times whitout `headless = false`
+ #  Load the specified page 100 times whit `headless = false`
  hiper -n 100 "baidu.com?a=1&b=2" -H false
 
  #  Load the specified page 100 times whit set `useragent`
