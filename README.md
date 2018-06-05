@@ -2,7 +2,7 @@
 
 > 🚀 A statistical analysis tool for performance testing 
 
-The name is short for **Hi** **per**formance <del>Or **High** **per**formance</del>
+The name is short for **Hi** **per**formance <del>Or **Hi**gh **per**formance</del>
 
 ## The output
 
