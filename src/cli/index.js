@@ -45,14 +45,14 @@ module.exports = class Cli {
       .description(description)
       .arguments('<url>')
       .action(u => url = u) // eslint-disable-line
-      .option('-n, --count <n>', '指定加载次数（default: 20）', parseInt)
-      .option('-c, --config <path>', '载入配置文件', this.parseJSONFile)
-      .option('-u, --useragent <ua>', '设置useragent')
-      .option('-H, --headless [b]', '是否使用无头模式（default: true）', this.headless)
-      .option('-e, --executablePath <path>', '使用指定的chrome浏览器')
-      .option('--no-cache', '禁用缓存（default: false）')
-      .option('--no-javascript', '禁用javascript（default: false）')
-      .option('--no-online', '离线模式（defalut: false）')
+      .option('-n, --count <n>', 'specified loading times (default: 20)', parseInt)
+      .option('-c, --config <path>', 'load the configuration file', this.parseJSONFile)
+      .option('-u, --useragent <ua>', 'to set the useragent')
+      .option('-H, --headless [b]', 'whether to use headless mode (default: true)', this.headless)
+      .option('-e, --executablePath <path>', 'use the specified chrome browser')
+      .option('--no-cache', 'disable cache (default: false)')
+      .option('--no-javascript', 'disable javascript (default: false)')
+      .option('--no-online', 'disable network (defalut: false)')
       .parse(process.argv)
 
     let {

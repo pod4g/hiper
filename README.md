@@ -2,9 +2,7 @@
 
 > 🚀 A statistical analysis tool for performance testing 
 
-令人愉悦的性能统计分析工具
-
-The name is short for **Hi** **per**formance
+The name is short for **Hi** **per**formance <del>Or **High** **per**formance</del>
 
 ## The output
 
@@ -31,14 +29,14 @@ Usage: hiper [options] [url]
 Options:
 
    -v, --version                output the version number
-   -n, --count <n>              指定加载次数（default: 20）
-   -c, --config <path>          载入配置文件
-   -u, --useragent <ua>         设置useragent
-   -H, --headless [b]           是否使用无头模式（default: true）
-   -e, --executablePath <path>  使用指定的chrome浏览器
-   --no-cache                   禁用缓存（default: false）
-   --no-javascript              禁用javascript（default: false）
-   --no-online                  离线模式（defalut: false）
+   -n, --count <n>              specified loading times (default: 20)
+   -c, --config <path>          load the configuration file
+   -u, --useragent <ua>         to set the useragent
+   -H, --headless [b]           whether to use headless mode (default: true)
+   -e, --executablePath <path>  use the specified chrome browser
+   --no-cache                   disable cache (default: false)
+   --no-javascript              disable javascript (default: false)
+   --no-online                  disable network (defalut: false)
    -h, --help                   output usage information
 ```
 
@@ -72,11 +70,11 @@ For instance
 ## Config
 ```javascript
 {
-   // options 指向指定的chrome可执行程序，一般不用这项配置，除非你想测试特定版本的chrome
+   // options Pointing to a specific chrome executable, this configuration is generally not required unless you want to test a specific version of chrome
    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-   // required 测试的url
+   // required The url you want to test
    "url": "http://www.baidu.com",
-   // options 本次测试所需要的cookie。一般是登录信息的cookie。 Array | Object
+   // options Cookies required for this test. It's usually a cookie for login information Array | Object
    "cookies": [{
       "name": "token",
       "value": "9+cL224Xh6VuRT",
@@ -85,31 +83,31 @@ For instance
       "size": 294,
       "httpOnly": true
    }],
-   // options default: 20 测试次数
+   // options default: 20 Test times
    "count": 100,
-   // options default: true 是否使用无头模式 
+   // options default: true Whether to use headless mode 
    "headless": true,
-   // options default: false 是否禁用cache 
+   // options default: false Disable cache 
    "noCache": false,
-   // options default: false 是否禁用javascript
+   // options default: false Disable javascript
    "noJavascript": false,
-   // options default: false 是否离线
+   // options default: false Disable network
    "noOnline": false,
-   // options 设置useragent信息
+   // options Set the useragent information
    "useragent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36",
-   // options 设置viewport信息
+   // options Set the viewport information
    "viewport": {
-      // options 视口宽度
+      // options
       "width": 375,
-      // options 视口高度
+      // options
       "height": 812,
       // options default: 1 devicePixelRatio
       "deviceScaleFactor": 3,
-      // options default: false 是否模拟成mobile
+      // options default: false Whether to simulate mobile
       "isMobile": false,
-      // options default: false 是否支持touch事件
+      // options default: false Whether touch events are supported
       "hasTouch": false,
-      // options default: false 是否是横屏
+      // options default: false Is it horizontal or not
       "isLandscape": false
    }
 }
@@ -122,10 +120,10 @@ hiper -c /home/config.json
 
 ## Pain spot
 
-我们开发完一个项目或者给一个项目做完性能优化以后，如何来衡量这个项目的性能是否达标？我们的常见方式是在`Dev Tool`中的`performance`和`network`中看数据，记录下几个关键的性能指标，然后刷新几次再看这些性能指标，
-有时候我们发现，由于样本太少，受当前「网络」、「CPU」、「内存」的繁忙程度的影响很重，有时优化后的项目反而比优化前更慢。如果有一个工具，一次性地请求N次网页，然后把各个性能指标取出来求平均值，我们就能**非常准确**地知道这个优化是「正优化」还是「负优化」。并且，也可以做对比，拿到「具体优化了多少」的**准确数据**。这个工具就是为了解决这个痛点的。
+After we have developed a project or optimized the performance of a project, how do we measure the performance of this project? A common approach is to look at the data in the `performance` and `network` in the `Dev Tool`, record a few key performance metrics, and refresh them a few times before looking at those performance metrics,
+Sometimes we find that due to the small sample size, the current **network/CPU/memory** load is heavily impacted, and sometimes the optimized project is slower than before the optimization. If there is a tool, a one-time web page to request many times, and then taking out the various performance indicators averaging, we can **very accurately** know the optimization is positive or negative optimization. In addition, you can also make a comparison and get **accurate data** about **how much you have optimized&**. This tool is designed to address this pain point.
 
-> 同时，这个工具也是学习「浏览器加载渲染网页过程」和「性能优化」的一个利器，因此我们也可以把他作为一个**强大的**学习辅助工具，不至于让我们在样本过少的情况下得到错误的结论。
+> At the same time, this tool is also learning 「load rendering web browser process」 and 「performance optimization」 of a tool, so we can take him as a powerful tool for learning, not let us in the case of too little sample to get the wrong conclusion
 
 ## Performance item
 
@@ -133,16 +131,17 @@ hiper -c /home/config.json
 
 ## Roadmap
 
-1. 更好的文档；
-2. 国际化；
-3. 增加页面加载的资源项的分析统计；
-4. 更好的输出格式化；
-5. 可以生成性能统计报告；
-6. 数据可视化；
+1. Better documentation
+2. i18n
+3. Increase the analysis statistics of resource items loaded on the page
+4. Statistical reports can be generated
+5. Data visualization
 
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+Welcome star and pr
 
 Copyright (c) 2018 liyanfeng(pod4g)
 
