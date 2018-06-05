@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 /test/unit/coverage/
 selenium-debug.log
+package-lock.json
 config.json
 exp.json
 note
