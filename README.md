@@ -55,22 +55,22 @@ For instance
  # The simplest usage
  hiper baidu.com
 
- # if the url has any parameter, surround the url with double quotes
+ # if the url has any parameter(s), surround the url with double quotes
  hiper "baidu.com?a=1&b=2"
 
  #  Load the specified page 100 times
  hiper -n 100 "baidu.com?a=1&b=2"
 
- #  Load the specified page 100 times whitout `cache`
+ #  Load the specified page 100 times without `cache`
  hiper -n 100 "baidu.com?a=1&b=2" --no-cache
 
- #  Load the specified page 100 times whitout `javascript`
+ #  Load the specified page 100 times without `javascript`
  hiper -n 100 "baidu.com?a=1&b=2" --no-javascript
  
- #  Load the specified page 100 times whit `headless = false`
+ #  Load the specified page 100 times with `headless = false`
  hiper -n 100 "baidu.com?a=1&b=2" -H false
 
- #  Load the specified page 100 times whit set `useragent`
+ #  Load the specified page 100 times with set `useragent`
  hiper -n 100 "baidu.com?a=1&b=2" -u "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
 ```
 
