@@ -8,7 +8,7 @@ The name is short for **Hi** **per**formance
 
 ## The output
 
-![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper5.png)
+![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper8.png)
 
 ## Install
 
@@ -75,7 +75,7 @@ For instance
    // options 指向指定的chrome可执行程序，一般不用这项配置，除非你想测试特定版本的chrome
    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
    // required 测试的url
-   "url": "http://www.didichuxing.com",
+   "url": "http://www.baidu.com",
    // options 本次测试所需要的cookie。一般是登录信息的cookie。 Array | Object
    "cookies": [{
       "name": "token",
