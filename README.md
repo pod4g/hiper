@@ -125,12 +125,12 @@ For instance
 hiper -c /home/config.json
 ```
 
-## Pain spot
+## Pain point
 
 After we have developed a project or optimized the performance of a project, how do we measure the performance of this project? A common approach is to look at the data in the `performance` and `network` in the `Dev Tool`, record a few key performance metrics, and refresh them a few times before looking at those performance metrics,
-Sometimes we find that due to the small sample size, the current **network/CPU/memory** load is heavily impacted, and sometimes the optimized project is slower than before the optimization. If there is a tool, a one-time web page to request many times, and then taking out the various performance indicators averaging, we can **very accurately** know the optimization is positive or negative optimization. In addition, you can also make a comparison and get **accurate data** about **how much you have optimized&**. This tool is designed to address this pain point.
+Sometimes we find that due to the small sample size, the current **Network/CPU/Memory** load is heavily impacted, and sometimes the optimized project is slower than before the optimization. If there is a tool, request web page many times, and then taking out the various performance indicators averaging, we can **very accurately** know the optimization is positive or negative. In addition, you can also make a comparison and get **accurate data** about **how much you have optimized**. This tool is designed to solve the pain point.
 
-> At the same time, this tool is also learning 「load rendering web browser process」 and 「performance optimization」 of a tool, so we can take him as a powerful tool for learning, not let us in the case of too little sample to get the wrong conclusion
+> At the same time, this tool is also a good tool for us to learn about the "browser load rendering process" and "performance optimization", so that we don't get wrong conclusions when there are too few samples
 
 ## Performance item
 
