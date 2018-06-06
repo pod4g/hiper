@@ -1,0 +1,57 @@
+{
+  "_args": {
+    "count": 20,
+    "headless": true,
+    "noCache": false,
+    "noJavascript": false,
+    "noOnline": false
+  },
+  "author": "liyanfeng(pod4g)",
+  "email": "pod4dop@gmail.com",
+  "name": "hiper",
+  "version": "0.0.14",
+  "description": "🚀 A statistical analysis tool for performance testing",
+  "keywords": [
+    "performance",
+    "statistical",
+    "analysis",
+    "testing",
+    "tool",
+    "puppeteer",
+    "shell",
+    "cli"
+  ],
+  "homepage": "https://github.com/pod4g/hiper",
+  "main": "./src/index.js",
+  "engines": {
+    "node": ">=8.5.4",
+    "npm": ">=5.6.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint benchmarks lib test",
+    "authors": "git log --format='%aN <%aE>' | sort -u"
+  },
+  "bin": {
+    "hiper": "./src/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "commander": "^2.15.1",
+    "figlet": "^1.2.0",
+    "puppeteer": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "^23.1.0"
+  }
+}
