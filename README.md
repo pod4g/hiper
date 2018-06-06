@@ -1,3 +1,6 @@
+<p align="center"><img src="src/assets/icon/logotype-512.png" alt="Hiper" height="100px"></p>
+
+
 ## Hiper &middot; ![Build Status](https://img.shields.io/circleci/project/vuejs/vue/dev.svg) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) ![npm6.1.0](https://img.shields.io/npm/v/npm.svg) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 
