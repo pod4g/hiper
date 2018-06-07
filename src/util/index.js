@@ -26,10 +26,10 @@ module.exports = class Util {
   static urlNormalize (url) {
     if (!url) return ''
     if (url.startsWith('//')) {
-      return `http:${url}`
+      return `https:${url}`
     }
     if (!/^https?:\/\//.test(url)) {
-      return `http://${url}`
+      return `https://${url}`
     }
     return url
   }
