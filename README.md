@@ -1,3 +1,5 @@
+**English** | [中文](./README.zh-CN.md)
+
 <p align="center"><img src="http://7xt9n8.com2.z0.glb.clouddn.com/hiper-logo-512.png" alt="Hiper" width="175"></p>
 
 <p align="center">🚀 A statistical analysis tool for performance testing</p>
@@ -74,7 +76,7 @@ Options:
 For instance
 
 ```bash
- # We can omit the protocol header if has omited, the protocol header will be `http://`
+ # We can omit the protocol header if has omited, the protocol header will be `https://`
 
  # The simplest usage
  hiper baidu.com
@@ -145,14 +147,23 @@ For instance
 ```
 
 ``` bash
-# Load the above configuration file
+# Load the above configuration file (Let's say this file is under /home/)
 hiper -c /home/config.json
 ```
 
 ## Pain point
 
-After we have developed a project or optimized the performance of a project, how do we measure the performance of this project? A common approach is to look at the data in the `performance` and `network` in the `Dev Tool`, record a few key performance metrics, and refresh them a few times before looking at those performance metrics,
-Sometimes we find that due to the small sample size, the current **Network/CPU/Memory** load is heavily impacted, and sometimes the optimized project is slower than before the optimization. If there is a tool, request web page many times, and then taking out the various performance indicators averaging, we can **very accurately** know the optimization is positive or negative. In addition, you can also make a comparison and get **accurate data** about **how much you have optimized**. This tool is designed to solve the pain point.
+After we have developed a project or optimized the performance of a project, 
+
+how do we measure the performance of this project?
+
+A common approach is to look at the data in the `performance` and `network` in the `Dev Tool`, record a few key performance metrics, and refresh them a few times before looking at those performance metrics,
+
+Sometimes we find that due to the small sample size, the current **Network/CPU/Memory** load is heavily impacted, and sometimes the optimized project is slower than before the optimization. 
+
+If there is a tool, request web page many times, and then taking out the various performance indicators averaging, we can **very accurately** know the optimization is positive or negative. 
+
+In addition, you can also make a comparison and get **accurate data** about **how much you have optimized**. This tool is designed to solve the pain point.
 
 > At the same time, this tool is also a good tool for us to learn about the "browser's process of load and rendering" and "performance optimization", so that we don't get wrong conclusions when there are too few samples
 
