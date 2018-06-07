@@ -32,8 +32,8 @@
   "homepage": "https://github.com/pod4g/hiper",
   "main": "./src/index.js",
   "engines": {
-    "node": ">=8.5.4",
-    "npm": ">=5.6.0"
+    "node": ">=8.0.0",
+    "npm": ">=5.0.0"
   },
   "scripts": {
     "test": "jest",

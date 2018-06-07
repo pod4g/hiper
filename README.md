@@ -18,11 +18,6 @@ Hi guys, Please present your issue in English
 
 请使用英语提issue
 
-## Requirements
-
-- Node.js@>=8.5.4
-- npm@>=5.6.0
-
 ## Install
 
 ``` bash
