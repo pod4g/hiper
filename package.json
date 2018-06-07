@@ -42,7 +42,8 @@
     "clui": "^0.3.6",
     "commander": "^2.15.1",
     "figlet": "^1.2.0",
-    "puppeteer": "^1.4.0"
+    "puppeteer": "^1.4.0",
+    "semver": "^5.5.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

@@ -1,4 +1,18 @@
 #! /usr/bin/env node --no-warnings
+
+const semver = require('semver')
+const chalk = require('chalk')
+const requiredNodeVersion = require('../package.json').engines.node
+
+if (!semver.satisfies(process.version, requiredNodeVersion)) {
+  console.log(chalk.red(
+    `\n[Hiper] Minimum Node version not met:` +
+    `\nYou are using Node ${process.version}, but Hiper ` +
+    `requries Node ${requiredNodeVersion}.\nPlease upgrade your Node version.\n`
+  ))
+  process.exit(1)
+}
+
 // 接受cli参数
 // 装配opts
 // 调用broswer拿到数据
