@@ -152,6 +152,14 @@ Sometimes we find that due to the small sample size, the current **Network/CPU/M
 4. Statistical reports can be generated
 5. Data visualization
 
+## Contributing
+
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new Pull Request
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
