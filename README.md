@@ -181,7 +181,7 @@ Sometimes we find that due to the small sample size, the current **Network/CPU/M
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Welcome star and pr
+Welcome Star and PR
 
 Copyright (c) 2018 liyanfeng(pod4g)
 
