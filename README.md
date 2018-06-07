@@ -116,6 +116,18 @@ For instance
       "size": 294,
       "httpOnly": true
    }],
+   // options Customize your own statistics item. key is the output name. value is "How to calculate"
+   "timing": {
+       "total": "loadEventEnd - navigationStart",
+       "total time of DNS and TCP": "connectEnd - domainLookupStart",
+       
+       // because the `aaaa` not a support or valid `PerformanceTiming` so this item will be ignored  
+       "just show you the bad case 1": "aaaa - connectStart"
+       // if the value is negative this item will be ignored also
+       "just show you the bad case 2": "connectStart - connectEnd",
+       // If there is a name conflict. will use this config.
+       "DOM Ready time": "domComplete - domLoading"
+   },
    // options default: 20 Test times
    "count": 100,
    // options default: true Whether to use headless mode 

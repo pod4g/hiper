@@ -114,6 +114,18 @@ Options:
       "size": 294,
       "httpOnly": true
    }],
+   // options 自定义分析项， key是输出的名称. value是告诉hiper该如何计算
+   "timing": {
+       "总时间": "loadEventEnd - navigationStart",
+       "DNS和TCP总耗时": "connectEnd - domainLookupStart",
+       
+       // 因为 `aaaa` 不是一个合法的性能指标 因此这一项将被忽略
+       "这是一个被忽略的项1": "aaaa - connectStart"
+       // if the value is negative this item will be ignored also
+       "这是一个被忽略的项2": "connectStart - connectEnd",
+       // 如何有命名冲突，那么这个将会覆盖默认的 `DOM Ready 耗时`，即使用 `domComplete - domLoading` 计算，而不在采用`domContentLoadedEventEnd - navigationStart`
+       "DOM Ready 耗时": "domComplete - domLoading"
+   },
    // options 测试次数 默认为20次
    "count": 100,
    // options 是否使用无头模式 默认为true
