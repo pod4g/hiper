@@ -2,7 +2,7 @@
 const EventEmitter = require('events').EventEmitter
 const emitter = new EventEmitter()
 emitter.setMaxListeners(200)
-test('Util.formatMSToHumanReadable', () => {
+test('EventEmitter', () => {
   let count = 0
   let i = 0
   for (i = 0; i < 300; i++) {
