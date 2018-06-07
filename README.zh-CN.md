@@ -76,7 +76,7 @@ Options:
 ```bash
  # 当我们省略协议头时，默认会在url前添加`https://`
 
- # 最简单的是uong
+ # 最简单的用法
  hiper baidu.com
 
  # 如何url中含有任何参数，请使用双引号括起来
