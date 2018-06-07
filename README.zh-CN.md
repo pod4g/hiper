@@ -37,14 +37,14 @@ npm install hiper -g
 
 | Key                            | Value                                        |
 | :----------------------------- | :------------------------------------------- |
-| DNS lookup time                | domainLookupEnd          - domainLookupStart |
-| TCP connect time               | connectEnd               - connectStart      |
-| TTFB                           | responseStart            - requestStart      |
-| Download time of the page      | responseEnd              - responseStart     |
-| After DOM Ready download time  | domComplete              - domInteractive    |
-| White screen time              | domInteractive           - navigationStart   |
-| DOM Ready time                 | domContentLoadedEventEnd - navigationStart   |
-| Load time                      | loadEventEnd             - navigationStart   |
+| DNS查询耗时                     | domainLookupEnd          - domainLookupStart |
+| TCP连接耗时                     | connectEnd               - connectStart      |
+| 第一个Byte到达浏览器的用时        | responseStart            - requestStart      |
+| 页面下载耗时                     | responseEnd              - responseStart     |
+| After DOM Ready download time   | domComplete              - domInteractive    |
+| 白屏时间                         | domInteractive           - navigationStart   |
+| DOM Ready 耗时                  | domContentLoadedEventEnd - navigationStart   |
+| 页面加载总耗时                   | loadEventEnd             - navigationStart   |
 
 https://developer.mozilla.org/zh-CN/docs/Web/API/PerformanceTiming
 
