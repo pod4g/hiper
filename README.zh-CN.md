@@ -12,7 +12,7 @@
 
 ## Hiper
 
-The name is short for **Hi** **per**formance <del>Or **Hi**gh **per**formance</del>
+可以看成 **Hi** **per**formance的缩写 <del>或者 **Hi**gh **per**formance的缩写</del>
 
 ## 注意事项
 
@@ -31,7 +31,7 @@ npm install hiper -g
 
 ![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper9.png)
 
-## PerformanceTiming
+## 性能指标
 
 ![timing](http://7xt9n8.com2.z0.glb.clouddn.com/PerformanceTiming.png)
 
@@ -55,20 +55,20 @@ hiper --help
 
 Usage: hiper [options] [url]
 
-🚀 A statistical analysis tool for performance testing
+🚀 令人愉悦的性能统计分析工具
 
 Options:
 
-   -v, --version                output the version number
-   -n, --count <n>              specified loading times (default: 20)
-   -c, --config <path>          load the configuration file
-   -u, --useragent <ua>         to set the useragent
-   -H, --headless [b]           whether to use headless mode (default: true)
-   -e, --executablePath <path>  use the specified chrome browser
-   --no-cache                   disable cache (default: false)
-   --no-javascript              disable javascript (default: false)
-   --no-online                  disable network (defalut: false)
-   -h, --help                   output usage information
+   -v, --version                输出版本号
+   -n, --count <n>              指定加载次数（默认20次）
+   -c, --config <path>          载入指定的配置文件
+   -u, --useragent <ua>         设置useragent
+   -H, --headless [b]           是否使用无头模式（默认为true）
+   -e, --executablePath <path>  使用指定的Chrome浏览器
+   --no-cache                   禁用缓存（默认为false）
+   --no-javascript              禁用JavaScript (默认为false)
+   --no-online                  禁用网络（默认为false）
+   -h, --help                   输出帮助信息
 ```
 
 用例
@@ -180,7 +180,7 @@ hiper -c /home/config.json
 4. Push to the branch (git push origin my-new-feature)
 5. Create new Pull Request
 
-## License
+## 协议
 
 [MIT](http://opensource.org/licenses/MIT)
 
