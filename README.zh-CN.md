@@ -41,7 +41,7 @@ npm install hiper -g
 | TCP连接耗时                     | connectEnd               - connectStart      |
 | 第一个Byte到达浏览器的用时        | responseStart            - requestStart      |
 | 页面下载耗时                     | responseEnd              - responseStart     |
-| After DOM Ready download time   | domComplete              - domInteractive    |
+| DOM Ready之后又继续下载资源的耗时 | domComplete              - domInteractive    |
 | 白屏时间                         | domInteractive           - navigationStart   |
 | DOM Ready 耗时                  | domContentLoadedEventEnd - navigationStart   |
 | 页面加载总耗时                   | loadEventEnd             - navigationStart   |
