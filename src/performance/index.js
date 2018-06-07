@@ -8,10 +8,6 @@ module.exports = class Performance {
     let tabs = []
     let pagesLength = 1
 
-    if (count === 10) {
-      pagesLength = 5
-    }
-
     if (count >= 20) {
       pagesLength = 4
     }
