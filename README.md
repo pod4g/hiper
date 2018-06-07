@@ -14,6 +14,11 @@ Hi guys, Please present your issue in English
 
 请使用英语提issue
 
+## Requirements
+
+- Node.js@>=8.5.4
+- npm@>=5.6.0
+
 ## The output
 
 ![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper9.png)
