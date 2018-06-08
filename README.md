@@ -106,7 +106,7 @@ For instance
    // options Pointing to a specific chrome executable, this configuration is generally not required unless you want to test a specific version of chrome
    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
    // required The url you want to test
-   "url": "http://www.baidu.com",
+   "url": "https://example.com",
    // options Cookies required for this test. It's usually a cookie for login information Array | Object
    "cookies": [{
       "name": "token",
