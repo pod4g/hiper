@@ -1,5 +1,3 @@
-#! /usr/bin/env node --no-warnings
-
 const semver = require('semver')
 const chalk = require('chalk')
 const requiredNodeVersion = require('../package.json').engines.node
