@@ -160,7 +160,7 @@ Having a JS file for config allows people to use ENV variables. For example, let
 module.exports = {
     ....
     cookies:  [{
-        name: 'authtoken',
+        name: 'token',
         value: process.env.authtoken,
         domain: 'example.com',
         path: '/',
