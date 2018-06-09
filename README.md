@@ -149,6 +149,9 @@ For instance
 ``` bash
 # Load the above configuration file (Let's say this file is under /home/)
 hiper -c /home/config.json
+
+# You can also use JS files for configuration
+hiper -c /home/config.js
 ```
 
 ## Pain point
