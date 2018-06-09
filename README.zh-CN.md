@@ -29,6 +29,8 @@ npm install hiper -g
 
 ## 输出
 
+注意: `It takes period (m)s to load ...`. 这个 `period` 是**运行本次测试所用时间**. 因此，-n 越大，这个数越大
+
 ![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper9.png)
 
 ## 性能指标

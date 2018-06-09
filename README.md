@@ -31,6 +31,8 @@ npm install hiper -g
 
 ## The output
 
+Notice: `It takes period (m)s to load ...`. the `period` means **This test takes time**. So -n go up and the period go up. not a bug
+ 
 ![Hiper](http://7xt9n8.com2.z0.glb.clouddn.com/hiper9.png)
 
 ## PerformanceTiming
