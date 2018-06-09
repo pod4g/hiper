@@ -101,6 +101,11 @@ For instance
 ```
 
 ## Config
+
+#### Support `.json` and `.js` config
+
+1. **json**
+
 ```javascript
 {
    // options Pointing to a specific chrome executable, this configuration is generally not required unless you want to test a specific version of chrome
@@ -146,11 +151,30 @@ For instance
 }
 ```
 
+2. **js**
+
+Having a JS file for config allows people to use ENV variables. For example, let's say I want to test the site on an authenticated state. I can pass some cookie that is used to identify me through ENV variables and having a JS based config file makes this simple. For example
+
+```javascript
+
+module.exports = {
+    ....
+    cookies:  [{
+        name: 'authtoken',
+        value: process.env.authtoken,
+        domain: 'example.com',
+        path: '/',
+        httpOnly: true
+    }],
+    ....
+}
+```
+
 ``` bash
 # Load the above configuration file (Let's say this file is under /home/)
 hiper -c /home/config.json
 
-# You can also use JS files for configuration
+# Or you can also use JS files for configuration
 hiper -c /home/config.js
 ```
 

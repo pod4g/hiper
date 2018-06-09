@@ -99,6 +99,11 @@ Options:
 ```
 
 ## 配置
+
+### 支持 `.json` 和 `.js` 格式的配置文件
+
+1. **json**
+
 ```javascript
 {
    // options 指向Chrome可执行程序，一般不需要配置此项，除非你想测试某个特定版本的Chrome
@@ -144,9 +149,30 @@ Options:
 }
 ```
 
+2. **js**
+
+配置的JS文件允许人们使用ENV变量。例如，假设你想在经过身份验证的状态下测试站点。你可以通过ENV变量传递一些用于标识你的cookie，有一个基于JS的配置文件使这变得很简单。例如
+
+```javascript
+module.exports = {
+    ....
+    cookies:  [{
+        name: 'token',
+        value: process.env.authtoken,
+        domain: 'example.com',
+        path: '/',
+        httpOnly: true
+    }],
+    ....
+}
+```
+
 ``` bash
 # 载入上述配置文件（假设配置文件在/home/下）
 hiper -c /home/config.json
+
+# 或者你也可以使用js文件作为配置文件
+hiper -c /home/config.js
 ```
 
 ## 痛点
