@@ -8,25 +8,25 @@ module.exports = class Performance {
     let tabs = []
     let pagesLength = 1
 
-    if (count >= 20) {
-      pagesLength = 4
-    }
+    // if (count >= 20) {
+    //   pagesLength = 4
+    // }
 
-    if (count >= 40) {
-      pagesLength = 8
-    }
+    // if (count >= 40) {
+    //   pagesLength = 8
+    // }
 
-    if (count >= 80) {
-      pagesLength = 10
-    }
+    // if (count >= 80) {
+    //   pagesLength = 10
+    // }
 
-    if (count >= 100) {
-      pagesLength = 20
-    }
+    // if (count >= 100) {
+    //   pagesLength = 20
+    // }
 
-    if (count >= 500) {
-      pagesLength = 25
-    }
+    // if (count >= 500) {
+    //   pagesLength = 25
+    // }
 
     for (let i = 0; i < pagesLength; i++) {
       tabs.push(await browser.newPage())
