@@ -1,7 +1,6 @@
 const program = require('commander')
 const pjson = require('../../package.json')
 const path = require('path')
-const fs = require('fs')
 const Util = require('../util')
 
 const {
@@ -15,7 +14,7 @@ module.exports = class Cli {
     filePath = path.isAbsolute(filePath) ? filePath : path.join(process.cwd(), filePath)
     let data = null
     try {
-      data = JSON.parse(fs.readFileSync(filePath).toString())
+      data = require(filePath)
       if (data) {
         let { noCache, noJavascript, noOnline } = data
         data.cache = !noCache
