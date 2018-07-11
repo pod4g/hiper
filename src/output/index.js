@@ -17,12 +17,26 @@ module.exports = class Outputer {
       afterDOMReadyDownloadTime,
       loadTime
     } = total
-    console.log('\n')
-    console.log(figlet.textSync('Hiper'))
-    console.log('\n')
-    // console.log(`🚀 加载 ${global.__hiper__.url} ${global.__hiper__.count} 次 用时 ${(global.__hiper__.runInterval) / 1000} s`)
-    console.log(`🚀 It takes ${(global.__hiper__.runInterval) / 1000} s to load \`${global.__hiper__.url}\` ${global.__hiper__.count} times`)
-    console.log('\n')
+    if (global.__hiper__.banner) {
+      console.log('\n')
+      console.log(figlet.textSync('Hiper'))
+      console.log('\n')
+      // console.log(`🚀 加载 ${global.__hiper__.url} ${global.__hiper__.count} 次 用时 ${(global.__hiper__.runInterval) / 1000} s`)
+      console.log(`🚀 It takes ${(global.__hiper__.runInterval) / 1000} s to load \`${global.__hiper__.url}\` ${global.__hiper__.count} times`)
+      console.log('\n')
+    }
+    new Line()
+      .padding(2)
+      .column('Run interval', 32)
+      .column(`${(global.__hiper__.runInterval) / 1000} s`, 20, [clc.cyan])
+      .fill()
+      .output()
+    new Line()
+      .padding(2)
+      .column('Total load times', 32)
+      .column(global.__hiper__.count.toString(), 20, [clc.cyan])
+      .fill()
+      .output()
     new Line()
       .padding(2)
       .column('DNS lookup time', 32)
@@ -71,6 +85,8 @@ module.exports = class Outputer {
       .column(loadTime, 20, [clc.cyan])
       .fill()
       .output()
-    console.log('\n')
+    if (global.__hiper__.banner) {
+      console.log('\n')
+    }
   }
 }

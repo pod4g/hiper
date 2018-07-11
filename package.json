@@ -4,7 +4,8 @@
     "headless": true,
     "noCache": false,
     "noJavascript": false,
-    "noOnline": false
+    "noOnline": false,
+    "noBanner": false
   },
   "author": "liyanfeng(pod4g)",
   "email": "pod4dop@gmail.com",
