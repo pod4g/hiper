@@ -16,10 +16,12 @@ module.exports = class Cli {
     try {
       data = require(filePath)
       if (data) {
-        let { noCache, noJavascript, noOnline } = data
+        let { noBanner, noCache, noJavascript, noOnline } = data
+        data.banner = !noBanner
         data.cache = !noCache
         data.javascript = !noJavascript
         data.online = !noOnline
+        delete data.noBanner
         delete data.noCache
         delete data.noJavascript
         delete data.noOnline
@@ -49,6 +51,7 @@ module.exports = class Cli {
       .option('-u, --useragent <ua>', 'to set the useragent')
       .option('-H, --headless [b]', 'whether to use headless mode (default: true)', this.headless)
       .option('-e, --executablePath <path>', 'use the specified chrome browser')
+      .option('--no-banner', 'disable banner (default: false)')
       .option('--no-cache', 'disable cache (default: false)')
       .option('--no-javascript', 'disable javascript (default: false)')
       .option('--no-online', 'disable network (defalut: false)')
@@ -60,6 +63,7 @@ module.exports = class Cli {
       config,
       headless,
       useragent,
+      banner,
       cache,
       javascript,
       online
@@ -81,6 +85,10 @@ module.exports = class Cli {
       headless = config.headless || _args.headless
     }
 
+    if (banner == null) {
+      banner = config.banner || !_args.banner
+    }
+    
     if (cache == null) {
       cache = config.cache || !_args.noCache
     }
@@ -114,6 +122,7 @@ module.exports = class Cli {
       count,
       headless,
       useragent,
+      banner,
       cache,
       javascript,
       online
