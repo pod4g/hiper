@@ -78,7 +78,7 @@ Options:
 For instance
 
 ```bash
- # We can omit the protocol header if has omited, the protocol header will be `https://`
+ # We can omit the protocol header if has omitted, the protocol header will be `https://`
 
  # The simplest usage
  hiper baidu.com
